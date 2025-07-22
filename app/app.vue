@@ -1,23 +1,24 @@
 <script setup lang="ts">
 import { VaporComponent, VanillaComponent } from '#components'
 
-const displayVapor = ref(false)
+const displayVapor = ref(true)
 </script>
 
 <template>
-  <div>
-    <button @click="displayVapor = !displayVapor">
-      {{ displayVapor ? 'Show Non-vapor Component' : 'Show Vapor Component' }}
-    </button>
+  <div class="container">
+    <div>
+      <button type="button" class="btn btn-primary btn-block" @click="displayVapor = !displayVapor">
+        {{ displayVapor ? 'Switch to normal Vue component' : 'Switch to Vue Vapor component' }}
+      </button>
+    </div>
+    <component :is="displayVapor ? VaporComponent : VanillaComponent" />
   </div>
-  <component :is="displayVapor ? VaporComponent : VanillaComponent" />
 </template>
 
 <style scoped>
 div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  background-color: #eee;
+  padding: 1rem;
   
   gap: 2rem;
 }
