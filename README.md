@@ -6,8 +6,8 @@ A demo showcasing Vue's new Vapor Mode compilation with benchmark tests inspired
 
 ## Features
 
-- Built on [Nuxt](https://nuxt.com/) with Vue 3.6 alpha
-- [Vapor Mode](https://github.com/vuejs/core/releases/tag/v3.6.0-alpha.1) components with `<script setup vapor>`
+- Built on [Nuxt](https://nuxt.com/) with native Vapor Mode support ([nuxt/nuxt#35772](https://github.com/nuxt/nuxt/pull/35772) preview) enabled via `vue: { vapor: true }` in `nuxt.config.ts`
+- [Vapor Mode](https://github.com/vuejs/core/releases/tag/v3.6.0-rc.1) components with `<script setup vapor>` (Vue 3.6 rc)
 - Side-by-side performance comparison
 - Benchmark operations: create, update, delete, swap rows
 - Real-time performance measurements
@@ -37,15 +37,15 @@ pnpm preview
 ## Technical notes
 
 Vapor Mode enables direct DOM manipulation without Virtual DOM overhead, potentially improving:
-- Bundle size (no VDOM runtime)so VDOM is still present
+- Bundle size (no VDOM runtime)
 - Memory usage
 - Rendering performance for large lists
 
 > [!NOTE]
-> This demo uses the interop plugin, so VDOM is still present.
+> This demo mixes Vapor and VDOM components, so Nuxt automatically installs Vue's interop plugin and the VDOM runtime is still present.
 
 > [!IMPORTANT]
-> There are [some significant limitations](https://github.com/vuejs/core/releases/tag/v3.6.0-alpha.1) in the current alpha version of Vue 3.6 Vapor Mode, including no support for SSR hydration.
+> There are [some significant limitations](https://github.com/vuejs/core/releases/tag/v3.6.0-alpha.1) in the current pre-release of Vue 3.6 Vapor Mode, including no support for SSR hydration.
 
 ## License
 
