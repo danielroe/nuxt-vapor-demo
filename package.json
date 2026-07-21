@@ -10,8 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^4.0.1",
-    "vue": "3.6.0-alpha.2",
+    "nuxt": "https://pkg.pr.new/nuxt@35772",
+    "vue": "https://pkg.pr.new/vue@7d63723",
     "vue-router": "^4.5.1"
   }
 }
